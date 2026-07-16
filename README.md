@@ -13,4 +13,10 @@ PROJECT="project-name"
 TEMP=/path/to/R1FQ_temp_file.txt
 find $DIR -name "*_R1_*fastq\.gz" | sort -n >>$TEMP; cat -n $TEMP >>/path/to/R1FQ_"$PROJECT".txt; rm $TEMP
 ```
+Build RSEM reference
+```
+OUTDIR=/path/to/output/dir
+mkdir -p $OUTDIR
+qsub /path/to/script.sh -v OUTDIR=$OUTDIR
+```
 
